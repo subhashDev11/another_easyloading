@@ -311,6 +311,7 @@ class AnotherEasyLoading {
     required ToastType type,
     TextStyle? titleStyle,
     TextStyle? messageStyle,
+    bool? showDivider,
   }) {
     return _instance._showStyledToast(
       message: message,
@@ -433,6 +434,7 @@ class AnotherEasyLoading {
     LoadingMaskType? maskType,
     bool? dismissOnTap,
     bool? showIcon,
+    bool? showDivider,
     String? title,
     LoadingToastPosition? toastPosition,
     required ToastType type,
@@ -479,6 +481,7 @@ class AnotherEasyLoading {
       completer: completer,
       titleStyle: titleStyle,
       messageStyle: messageStyle,
+      showDivider: showDivider,
     );
     completer.future.whenComplete(() {
       _callback(LoadingStatus.show);

@@ -20,6 +20,7 @@ class ToastContainer extends StatefulWidget {
   final TextStyle? titleStyle;
   final TextStyle? messageStyle;
   final bool? showIcon;
+  final bool? showDivider;
 
   const ToastContainer({
     super.key,
@@ -34,6 +35,7 @@ class ToastContainer extends StatefulWidget {
     this.animation = true,
     required this.type,
     this.showIcon,
+    this.showDivider,
   });
 
   @override
@@ -153,6 +155,7 @@ class ToastContainerState extends State<ToastContainer> with SingleTickerProvide
                 messageStyle: widget.messageStyle,
                 showIcon: widget.showIcon ?? true,
                 type: widget.type,
+                showDivider: widget.showDivider ?? false,
               ),
               _animationController,
               _alignment,
@@ -171,6 +174,7 @@ class _Indicator extends StatelessWidget {
   final TextStyle? messageStyle;
   final ToastType type;
   final bool showIcon;
+  final bool showDivider;
 
   const _Indicator({
     required this.message,
@@ -179,6 +183,7 @@ class _Indicator extends StatelessWidget {
     this.titleStyle,
     required this.type,
     required this.showIcon,
+    required this.showDivider,
   });
 
   Color _getBackgroundColor() {
@@ -243,7 +248,9 @@ class _Indicator extends StatelessWidget {
                   textAlign: ToastTheme.textAlign,
                 ),
               ),
-            if (title != null) Divider(),
+            if (title != null && showDivider) Divider(
+              color: Colors.white,
+            ),
             Padding(
               padding: const EdgeInsets.only(
                 left: 5,
