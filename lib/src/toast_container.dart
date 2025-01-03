@@ -237,7 +237,7 @@ class _Indicator extends StatelessWidget {
                   title!,
                   style: titleStyle ??
                       TextStyle(
-                        color: ToastTheme.titleColor,
+                        color: Colors.white,
                         fontSize: ToastTheme.fontSize,
                       ),
                   textAlign: ToastTheme.textAlign,
@@ -252,7 +252,7 @@ class _Indicator extends StatelessWidget {
                 message,
                 style: messageStyle ??
                     TextStyle(
-                      color: ToastTheme.messageColor,
+                      color: Colors.white,
                       fontSize: ToastTheme.fontSize,
                     ),
                 textAlign: ToastTheme.textAlign,
@@ -266,7 +266,7 @@ class _Indicator extends StatelessWidget {
                 children: [
                   Icon(
                     _getIcon(),
-                    size: 30,
+                    size: 25,
                   ),
                   SizedBox(
                     width: 10,
