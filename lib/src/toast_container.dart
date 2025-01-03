@@ -267,6 +267,7 @@ class _Indicator extends StatelessWidget {
                   Icon(
                     _getIcon(),
                     size: 25,
+                    color: Colors.white,
                   ),
                   SizedBox(
                     width: 10,

@@ -309,6 +309,8 @@ class AnotherEasyLoading {
     bool? showIcon,
     String? title,
     required ToastType type,
+    TextStyle? titleStyle,
+    TextStyle? messageStyle,
   }) {
     return _instance._showStyledToast(
       message: message,
@@ -434,6 +436,8 @@ class AnotherEasyLoading {
     String? title,
     LoadingToastPosition? toastPosition,
     required ToastType type,
+    TextStyle? titleStyle,
+    TextStyle? messageStyle,
   }) async {
     assert(
       overlayEntry != null,
@@ -473,6 +477,8 @@ class AnotherEasyLoading {
       maskType: maskType,
       dismissOnTap: dismissOnTap,
       completer: completer,
+      titleStyle: titleStyle,
+      messageStyle: messageStyle,
     );
     completer.future.whenComplete(() {
       _callback(LoadingStatus.show);
