@@ -16,22 +16,16 @@ class LoadingWidget extends StatefulWidget {
 }
 
 class _LoadingWidgetState extends State<LoadingWidget> {
-  EasyLoadingOverlayEntry? _overlayEntry;
+  late EasyLoadingOverlayEntry _overlayEntry;
 
   @override
   void initState() {
     super.initState();
-    // _overlayEntry = EasyLoadingOverlayEntry(
-    //   builder: (BuildContext context) => AnotherEasyLoading.instance.w ?? Container(),
-    // );
-    // AnotherEasyLoading.instance.overlayEntry = _overlayEntry;
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      _overlayEntry = EasyLoadingOverlayEntry(
-        builder: (BuildContext context) =>
-            AnotherEasyLoading.instance.w ?? const SizedBox.shrink(),
-      );
-      AnotherEasyLoading.instance.overlayEntry = _overlayEntry;
-    });
+    _overlayEntry = EasyLoadingOverlayEntry(
+      builder: (BuildContext context) =>
+          AnotherEasyLoading.instance.w ?? const SizedBox.shrink(),
+    );
+    AnotherEasyLoading.instance.overlayEntry = _overlayEntry;
   }
 
   @override
@@ -46,8 +40,7 @@ class _LoadingWidgetState extends State<LoadingWidget> {
                 return widget.child ?? const SizedBox.shrink();
               },
             ),
-            if(_overlayEntry!=null)
-              _overlayEntry!,
+            _overlayEntry,
           ],
         ),
       ),
