@@ -16,7 +16,7 @@ class LoadingWidget extends StatefulWidget {
 }
 
 class _LoadingWidgetState extends State<LoadingWidget> {
-  late EasyLoadingOverlayEntry _overlayEntry;
+  EasyLoadingOverlayEntry? _overlayEntry;
 
   @override
   void initState() {
@@ -46,7 +46,8 @@ class _LoadingWidgetState extends State<LoadingWidget> {
                 return widget.child ?? const SizedBox.shrink();
               },
             ),
-            _overlayEntry,
+            if(_overlayEntry!=null)
+              _overlayEntry!,
           ],
         ),
       ),
