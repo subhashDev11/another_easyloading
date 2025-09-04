@@ -33,18 +33,15 @@ class _LoadingWidgetState extends State<LoadingWidget> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: FocusScope(
-        node: FocusScopeNode(),
-        child: Overlay(
-          initialEntries: [
-            EasyLoadingOverlayEntry(
-              builder: (BuildContext context) {
-                return widget.child ?? const SizedBox.shrink();
-              },
-            ),
-            _overlayEntry,
-          ],
-        ),
+      child: Overlay(
+        initialEntries: [
+          EasyLoadingOverlayEntry(
+            builder: (BuildContext context) {
+              return widget.child ?? const SizedBox.shrink();
+            },
+          ),
+          _overlayEntry,
+        ],
       ),
     );
   }
