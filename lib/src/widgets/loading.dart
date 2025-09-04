@@ -23,7 +23,9 @@ class _LoadingWidgetState extends State<LoadingWidget> {
     super.initState();
     _overlayEntry = EasyLoadingOverlayEntry(
       builder: (BuildContext context) =>
-          AnotherEasyLoading.instance.w ?? const SizedBox.shrink(),
+          ExcludeFocus(child: ExcludeSemantics(
+            child: AnotherEasyLoading.instance.w ?? const SizedBox.shrink(),
+          ))
     );
     AnotherEasyLoading.instance.overlayEntry = _overlayEntry;
   }
